@@ -9,16 +9,18 @@
 // note: cannot use import for some reason
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { createSVGWindow, config } = require('svgdom');
-const svgWindow = createSVGWindow();
-const document = svgWindow.document;
+// const svgWindow = createSVGWindow();
+// import { createSVGWindow, config } from 'svgdom';
 
 // register window and document
 // note: registerWindow could not be imported for some reason
 declare module '@svgdotjs/svg.js' {
-  const registerWindow: (win: any, doc: any) => void;
+  function registerWindow(window: any, document: any): void;
 }
+const window = createSVGWindow();
+
 import { SVG, Path, Shape, Box, Container, Element, List, Circle, registerWindow } from '@svgdotjs/svg.js';
-registerWindow(svgWindow, document);
+registerWindow(window, window.document);
 
 import { SVGAssets } from './svg-assets.model';
 import { FrameDefinition, getFrame, findFrameDefinition, findAssetName } from './symbol-map';

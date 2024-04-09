@@ -5,6 +5,7 @@
  * copyright statements as described in the LICENSE.txt file distributed with
  * this work.
  */
+
 import { KVMap, validateOptions } from './options';
 import { Symbol } from './symbol';
 import { styleValidation } from './style';
