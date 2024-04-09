@@ -12,7 +12,8 @@
     "dist": "pkg -o dist/dhs-symbol-server.exe build/index.js",
     "postdist": "copyfiles -u 1 -a ./node_modules/canvas/build/Release/**/* ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doit": "npm run build && node build/index.js"
+    "doit": "npm run build && node build/index.js",
+    "dev": "tsc && node build/index.js"
   },
   "keywords": [],
   "author": "",

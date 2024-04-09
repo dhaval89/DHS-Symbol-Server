@@ -35,7 +35,8 @@
     "prettier": "^2.0.5",
     "svg-to-ts": "^5.0.1",
     "terser": "^5.14.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "@types/fontkit": "^2.0.7"
   },
   "dependencies": {
     "@svgdotjs/svg.js": "^3.0.16",
