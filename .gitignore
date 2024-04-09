@@ -2,6 +2,4 @@
 .vscode
 *.puml
 .DS_Store
-dhs-server/yarn.lock
-dhs-symbol/package-lock.json
-dhs-symbol/yarn.lock
+node_modules
