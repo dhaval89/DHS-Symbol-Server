@@ -40,6 +40,13 @@ const server = http.createServer((req: IncomingMessage, res: ServerResponse) => 
     return;
   }
 
+  if (req_url.endsWith('symbols.json')) {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(SymbolModule.getSymbolMap);
+    return;
+  }
+
   const url_parts = url.parse(req_url, true);
   const url_pathname = url_parts ? url_parts.pathname : '';
   const url_path_parts = url_pathname ? url_pathname.split('/') : [''];
