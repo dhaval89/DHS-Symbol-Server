@@ -32,6 +32,10 @@ if (typeof argv.port === 'string') {
 }
 
 const server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
   const req_url = req.url ? req.url : '';
   if (req_url.includes('favicon')) {
     //TODO: return favicon
